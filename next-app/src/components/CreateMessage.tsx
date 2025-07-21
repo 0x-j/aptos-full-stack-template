@@ -106,7 +106,7 @@ export function CreateMessage() {
   };
 
   return (
-    <Card>
+    <Card className="shadow-xl">
       <CardHeader>
         <CardTitle>Create a new message</CardTitle>
         <CardDescription>

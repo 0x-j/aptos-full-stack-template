@@ -5,7 +5,7 @@ export const RootHeader = () => {
   return (
     <div className="flex justify-between items-center gap-6 pb-5">
       <div className="flex flex-col gap-2 md:gap-3">
-        <h1 className="text-xl font-semibold tracking-tight">
+        <h1 className="text-xl font-semibold tracking-tight bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 bg-clip-text text-transparent">
           <a href="/">Aptos Full Stack Demo App</a>
         </h1>
       </div>

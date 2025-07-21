@@ -27,7 +27,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "flex justify-center min-h-screen bg-background font-sans antialiased",
+          "flex justify-center min-h-screen bg-gradient-to-br from-slate-50 to-teal-100 dark:from-gray-900 dark:to-gray-800 font-sans antialiased",
           fontSans.variable
         )}
       >

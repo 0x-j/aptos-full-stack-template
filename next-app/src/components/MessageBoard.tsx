@@ -4,7 +4,7 @@ import { columns } from "@/components/message-board/columns";
 
 export const MessageBoard = async () => {
   return (
-    <Card>
+    <Card className="shadow-xl">
       <CardHeader>
         <CardTitle>Message board</CardTitle>
       </CardHeader>

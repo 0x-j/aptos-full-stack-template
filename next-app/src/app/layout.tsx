@@ -27,7 +27,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "flex justify-center min-h-screen bg-background font-sans antialiased",
+          "min-h-screen gradient-bg font-sans antialiased",
           fontSans.variable
         )}
       >
@@ -39,13 +39,17 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         >
           <QueryProvider>
             <WalletProvider>
-              <main className="flex flex-col w-full max-w-[1000px] p-6 pb-12 md:px-8 gap-6">
-                <WrongNetworkAlert />
+              <div className="flex flex-col min-h-screen">
                 <RootHeader />
-                {children}
-                <Toaster />
+                <WrongNetworkAlert />
+                <main className="flex-1">
+                  <div className="container mx-auto px-6 py-8 max-w-6xl">
+                    {children}
+                  </div>
+                </main>
                 <RootFooter />
-              </main>
+                <Toaster />
+              </div>
             </WalletProvider>
           </QueryProvider>
         </ThemeProvider>

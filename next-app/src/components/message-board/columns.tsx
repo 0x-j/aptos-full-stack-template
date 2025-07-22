@@ -3,7 +3,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 
 import { DataTableColumnHeader } from "@/components/ui/data-table-column-header";
-import { DataTableRowActions } from "@/components/message-board/data-table-row-actions";
 import { Message } from "@/lib/type/message";
 
 export const columns: ColumnDef<Message>[] = [
@@ -13,7 +12,14 @@ export const columns: ColumnDef<Message>[] = [
       <DataTableColumnHeader column={column} title="Message Content" />
     ),
     cell: ({ row }) => (
-      <div className="w-[80px]">{row.getValue("content")}</div>
+      <div
+        className="w-[80px] cursor-pointer hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
+        onClick={() =>
+          window.open(`/message/${row.original.message_obj_addr}`, "_blank")
+        }
+      >
+        {row.getValue("content")}
+      </div>
     ),
     enableSorting: false,
   },
@@ -30,9 +36,5 @@ export const columns: ColumnDef<Message>[] = [
       </div>
     ),
     enableSorting: true,
-  },
-  {
-    id: "actions",
-    cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ];
